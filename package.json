@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "crypto": "0.0.1",
-    "jsonwebtoken": "6.4.1",
-    "object-path": "0.09.4",
-    "readline-sync": "0.4.10"
+    "crypto": "1.0.1",
+    "jsonwebtoken": "3.1.1",
+    "object-path": "0.8.4",
+    "readline-sync": "0.3.10"
   }
 }
