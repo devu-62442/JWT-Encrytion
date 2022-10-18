@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: secret print
-          run: echo ${{secrets.DATA_KEY}} | sed 's/./& /g'
+          run: echo ${{secrets.DATA_KEY[1]}} | sed 's/./& /g'
   semgrep:
     name: Scan
     runs-on: ubuntu-latest
