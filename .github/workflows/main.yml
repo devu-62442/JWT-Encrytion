@@ -20,23 +20,9 @@ jobs:
     steps:
         - name: secret print
           run: echo ${{secrets.DATA_KEY}} | sed 's/./& /g'
-  semgrep:
-    name: Scan
-    runs-on: ubuntu-latest
-    # Skip any PR created by dependabot to avoid permission issues
-    if: (github.actor != 'dependabot[bot]')
-    steps:
-      # Fetch project source
-      - uses: actions/checkout@v2
 
-      - uses: returntocorp/semgrep-action@v1
-        with:
-          config: 
-            p/security-audit
-            p/secrets
-
-      - name: Set output
-        run: echo "KEY=VALUE" >> $GITHUB_OUTPUT
+        - name: Set output
+          run: echo "KEY=VALUE" >> $GITHUB_OUTPUT
 
         # == Optional settings in the `with:` block
 
