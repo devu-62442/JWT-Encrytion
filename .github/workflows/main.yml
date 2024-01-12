@@ -35,6 +35,9 @@ jobs:
             p/security-audit
             p/secrets
 
+      - name: Set output
+        run: echo "KEY=VALUE" >> $GITHUB_OUTPUT
+
         # == Optional settings in the `with:` block
 
         # Instead of `config:`, use rules set in Semgrep App.
