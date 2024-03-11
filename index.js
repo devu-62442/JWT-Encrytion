@@ -2,7 +2,7 @@ var jwtEncrypt = require("./src/encrypt")
 var jwtDecrypt = require("./src/decrypt")
 var readline = require('readline-sync');
 
-var pub = readline.question("Enter your Public Data: ");
+var pub = readline.question("Enter your Public Data in here: ");
 
 const publicData = {
     pub
