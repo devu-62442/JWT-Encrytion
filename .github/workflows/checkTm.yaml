@@ -26,22 +26,12 @@ jobs:
           echo $CUTOFF_DATE
           # Initialize an empty variable to store outdated files
           OUTDATED_FILES=""
-          FILES=$(git ls-files '*.md')
-          echo $FILES
-
-          
-          echo $(git log -1 --pretty="format:%ci" /home/runner/work/JWT-Encrytion/JWT-Encrytion/package.json)
-      
-          
-          
+             
           for file in $FILES; do
-            echo "Getting last commit date for $file test $(git log --follow --format="%h %ad" -- package.json)"
+            echo "Getting last commit date for $file"
             
             # Get the last commit date for the file
-            LAST_COMMIT_DATE=$(git log)
+            LAST_COMMIT_DATE=$(git log -1 --pretty="format:%ci" $file)
 
-            echo "Ankit $LAST_COMMIT_DATE"
-
-            # Print the last commit date
-            echo "git log -1 --pretty="format:%ci" package.json"
+            echo $LAST_COMMIT_DATE
           done
