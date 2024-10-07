@@ -38,3 +38,19 @@ jobs:
 
               echo $LAST_COMMIT_DATE
             done
+
+            LAST_COMMIT_DATE=$(git log -1 --format=%ci -- $file | cut -d' ' -f1)
+
+            # Check if the last commit date is older than 1 month
+            if [[ "$LAST_COMMIT_DATE" < "$CUTOFF_DATE" ]]; then
+              OUTDATED_FILES="$OUTDATED_FILES\n$file (Last updated: $LAST_COMMIT_DATE)"
+            fi
+          done
+
+          # Set the output variable with the list of outdated files
+          if [[ -n "$OUTDATED_FILES" ]]; then
+            echo "OUTDATED_FILES=true" >> $GITHUB_ENV
+            echo "FILE_LIST=$OUTDATED_FILES" >> $GITHUB_ENV
+          else
+            echo "OUTDATED_FILES=false" >> $GITHUB_ENV
+          fi
