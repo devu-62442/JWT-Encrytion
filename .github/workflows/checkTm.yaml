@@ -39,8 +39,8 @@ jobs:
 
           # Set the output variable with the list of outdated files
           if [[ -n "$OUTDATED_FILES" ]]; then
-            echo "OUTDATED_FILES=true" >> $GITHUB_ENV
-            echo "FILE_LIST=$OUTDATED_FILES" >> $GITHUB_ENV
+            echo "OUTDATED_FILES=true"
+            echo "FILE_LIST=$OUTDATED_FILES" 
           else
-            echo "OUTDATED_FILES=false" >> $GITHUB_ENV
+            echo "OUTDATED_FILES=false" 
           fi
