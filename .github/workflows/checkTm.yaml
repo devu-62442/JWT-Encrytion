@@ -23,22 +23,12 @@ jobs:
       - name: Find outdated Markdown files
         id: find_outdated_files
         run: |
-          echo $CUTOFF_DATE
           # Initialize an empty variable to store outdated files
           OUTDATED_FILES=""
 
-          FILES=$(git ls-files '*.md')
-          
-          for file in $FILES 
-            do
-              echo "Getting last commit date for $file"
-            
-              #  Get the last commit date for the file
-              LAST_COMMIT_DATE=$(git log -1 --pretty="format:%ci" $file)
-
-              echo $LAST_COMMIT_DATE
-            done
-
+          # Loop through all .md files and check their last commit date
+          for file in $(git ls-files '*.md'); do
+            # Get the last commit date of the file
             LAST_COMMIT_DATE=$(git log -1 --format=%ci -- $file | cut -d' ' -f1)
 
             # Check if the last commit date is older than 1 month
