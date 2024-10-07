@@ -27,11 +27,12 @@ jobs:
           # Initialize an empty variable to store outdated files
           OUTDATED_FILES=""
              
-          for file in $FILES; do
-            echo "Getting last commit date for $file"
+          for file in $FILES 
+            do
+              echo "Getting last commit date for $file"
             
-            # Get the last commit date for the file
-            LAST_COMMIT_DATE=$(git log -1 --pretty="format:%ci" $file)
+              #  Get the last commit date for the file
+              LAST_COMMIT_DATE=$(git log -1 --pretty="format:%ci" $file)
 
-            echo $LAST_COMMIT_DATE
-          done
+              echo $LAST_COMMIT_DATE
+            done
