@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch the full history to access all logs
 
       - name: Get date 1 month ago
         id: get_cutoff_date
