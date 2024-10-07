@@ -33,6 +33,8 @@ jobs:
             # Get the last commit date for the file
             LAST_COMMIT_DATE=$(stat -c %y "README.md")
 
+            echo "Ankit $LAST_COMMIT_DATE"
+
             # Print the last commit date
             echo "git log -1 --pretty="format:%ci" package.json"
           done
