@@ -27,7 +27,7 @@ jobs:
           FILES=$(git ls-files '*.md')
           echo $FILES
 
-          echo $PATH
+          echo $GITHUB_WORKSPACE
           echo $(git log -1 --pretty="format:%ct       %cr     %h" )
       
           
