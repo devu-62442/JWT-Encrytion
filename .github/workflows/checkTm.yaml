@@ -30,7 +30,7 @@ jobs:
             echo "Getting last commit date for $file"
             
             # Get the last commit date for the file
-            LAST_COMMIT_DATE=$(git log -1 --format=%ci -- README.md)
+            LAST_COMMIT_DATE=$(git log -1 --format=%ci -- index.js)
 
             # Print the last commit date
             echo "Last commit date for $file: $LAST_COMMIT_DATE"
