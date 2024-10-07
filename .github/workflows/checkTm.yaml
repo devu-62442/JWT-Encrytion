@@ -27,8 +27,10 @@ jobs:
           FILES=$(git ls-files '*.md')
           echo $FILES
 
-          echo $(git blame --date=short package.json)
+          echo $PATH
+          echo $(git log -1 --pretty="format:%ct       %cr     %h" )
       
+          
           
           for file in $FILES; do
             echo "Getting last commit date for $file test $(git log --follow --format="%h %ad" -- package.json)"
