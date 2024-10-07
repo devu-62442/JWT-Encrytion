@@ -28,7 +28,7 @@ jobs:
           echo $FILES
 
           
-          echo $(git log -1 --pretty="format:%ct %cr %h" /home/runner/work/JWT-Encrytion/JWT-Encrytion/package.json)
+          echo $(git log -1 --pretty="format:%ci" /home/runner/work/JWT-Encrytion/JWT-Encrytion/package.json)
       
           
           
