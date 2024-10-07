@@ -33,5 +33,5 @@ jobs:
             LAST_COMMIT_DATE=$(git log --follow -- "index.js")
 
             # Print the last commit date
-            echo "Last commit date for $file: $LAST_COMMIT_DATE"
+            echo "git log -1 --pretty="format:%ci" package.json"
           done
