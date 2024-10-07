@@ -26,6 +26,7 @@ jobs:
           OUTDATED_FILES=""
           FILES=$(git ls-files '*.md')
           echo $FILES
+          echo $(git log --follow --format="%h %ad" -- package.json)
           for file in $FILES; do
             echo "Getting last commit date for $file test $(git log --follow --format="%h %ad" -- package.json)"
             
