@@ -26,7 +26,9 @@ jobs:
           echo $CUTOFF_DATE
           # Initialize an empty variable to store outdated files
           OUTDATED_FILES=""
-             
+
+          FILES=$(git ls-files '*.md')
+          
           for file in $FILES 
             do
               echo "Getting last commit date for $file"
